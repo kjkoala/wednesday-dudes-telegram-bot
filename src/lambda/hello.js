@@ -1,3 +1,5 @@
+const fetch = require('node-fetch');
+
 const METHOD_POST = 'POST';
 
 exports.handler = async (event, context) => {
@@ -34,9 +36,9 @@ exports.handler = async (event, context) => {
   let url = `https://api.telegram.org/bot${token}/sendMessage`;
   url += `?chat_id=${chatId}&text=Dude`;
 
-  console.log(url);
-
   try {
+    const response = await fetch(url);
+
     return {
       statusCode: 200,
       body: 'Success',
@@ -48,5 +50,6 @@ exports.handler = async (event, context) => {
       statusCode: 422,
       body: 'Something went wrong',
     };
+
   }
 };
