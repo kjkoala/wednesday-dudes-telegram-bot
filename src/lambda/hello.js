@@ -1,15 +1,12 @@
+const axios = require('axios');
+
 const METHOD_POST = 'POST';
 
-exports.handler = (event, context, callback) => {
-  const httpMethod = event.httpMethod;
+exports.handler = async (event, context) => {
+  console.log('Token', process.env.TELEGRAM_BOT_TOKEN);
 
-  if (httpMethod !== METHOD_POST) {
-    callback(null, {
-      statusCode: 405,
-      body: 'Method not allowed',
-    });
-    console.error('Method not allowed', httpMethod);
-    return;
+  if (event.httpMethod !== METHOD_POST) {
+    return { statusCode: 405, body: 'Method not allowed' };
   }
 
   const body = event.body;
@@ -23,18 +20,36 @@ exports.handler = (event, context, callback) => {
   }
 
   if (!data) {
-    callback(null, {
+    console.error('Bad request', httpMethod);
+    return {
       statusCode: 400,
       body: 'Bad request',
-    });
-    console.error('Bad request', httpMethod);
+    };
     return;
   }
 
-  console.log('body', data);
+  console.log('Body', data);
 
-  callback(null, {
-    statusCode: 200,
-    body: 'Hello world',
-  });
+  const chatId = data.message.chat.id;
+  const token = process.env.TELEGRAM_BOT_TOKEN;
+
+  let url = `https://api.telegram.org/bot${token}/sendMessage`;
+  url += `?chat_id=${chatId}&text=Dude`;
+
+  try {
+    const response = await fetch(url);
+
+    return {
+      statusCode: 200,
+      body: 'Success',
+    };
+  } catch (err) {
+    console.error(err);
+
+    return {
+      statusCode: 422,
+      body: 'Something went wrong',
+    };
+
+  }
 };
