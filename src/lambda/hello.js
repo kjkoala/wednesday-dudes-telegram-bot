@@ -1,5 +1,3 @@
-const axios = require('axios');
-
 const METHOD_POST = 'POST';
 
 exports.handler = async (event, context) => {
@@ -36,9 +34,9 @@ exports.handler = async (event, context) => {
   let url = `https://api.telegram.org/bot${token}/sendMessage`;
   url += `?chat_id=${chatId}&text=Dude`;
 
-  try {
-    const response = await fetch(url);
+  console.log(url);
 
+  try {
     return {
       statusCode: 200,
       body: 'Success',
@@ -50,6 +48,5 @@ exports.handler = async (event, context) => {
       statusCode: 422,
       body: 'Something went wrong',
     };
-
   }
 };
