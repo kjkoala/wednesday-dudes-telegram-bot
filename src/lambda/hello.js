@@ -34,8 +34,12 @@ async function handler(event, context) {
   const chatId = data.message.chat.id;
   const token = process.env.TELEGRAM_BOT_TOKEN;
 
-  let url = `https://api.telegram.org/bot${token}/sendMessage`;
-  url += `?chat_id=${chatId}&text=Hey%20dude`;
+  // let url = `https://api.telegram.org/bot${token}/sendMessage`;
+
+  const photoUrl = 'https://i.kym-cdn.com/photos/images/newsfeed/001/091/264/665.jpg';
+
+  let url = `https://api.telegram.org/bot${token}/sendPhoto`;
+  url += `?chat_id=${chatId}&photo=${encodeURIComponent(photoUrl)}`;
 
   try {
     const response = await fetch(url);
