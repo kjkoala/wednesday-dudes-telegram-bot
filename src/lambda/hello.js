@@ -1,8 +1,9 @@
-const fetch = require('node-fetch');
+const https = require('https');
 
 const METHOD_POST = 'POST';
 
-exports.handler = async (event, context) => {
+
+async function handler(event, context) {
   console.log('Token', process.env.TELEGRAM_BOT_TOKEN);
 
   if (event.httpMethod !== METHOD_POST) {
@@ -52,4 +53,40 @@ exports.handler = async (event, context) => {
     };
 
   }
-};
+}
+
+function request(url) {
+  return new Promise((resolve, reject) => {
+    const req = https.get(url, (res) => {
+      let data = '';
+
+      res.on('data', (chunk) => {
+        data += chunk;
+      });
+
+      res.on('end', () => {
+        // if (res.statusCode !== 200) {
+          // console.error(res);
+          // reject({ status: res.statusCode });
+          // return;
+        // }
+
+        console.log(res.statusCode);
+        console.log(data);
+        resolve();
+      });
+    });
+
+    req.on('error', (err) => {
+      console.error(err);
+      reject(err);
+    });
+
+    req.end();
+  });
+}
+
+exports.req = request;
+
+
+exports.handler = handler;
