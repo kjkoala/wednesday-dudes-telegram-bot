@@ -55,7 +55,7 @@ async function handler(event, context) {
   }
 }
 
-function request(url) {
+function fetch(url) {
   return new Promise((resolve, reject) => {
     const req = https.get(url, (res) => {
       let data = '';
@@ -85,8 +85,5 @@ function request(url) {
     req.end();
   });
 }
-
-exports.req = request;
-
 
 exports.handler = handler;
