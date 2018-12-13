@@ -35,7 +35,7 @@ async function handler(event, context) {
   const token = process.env.TELEGRAM_BOT_TOKEN;
 
   let url = `https://api.telegram.org/bot${token}/sendMessage`;
-  url += `?chat_id=${chatId}&text=Dude`;
+  url += `?chat_id=${chatId}&text=Hey%20dude`;
 
   try {
     const response = await fetch(url);
