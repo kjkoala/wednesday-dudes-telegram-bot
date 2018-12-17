@@ -5,7 +5,7 @@ const WEEKDAYS = {
   monday: 1,
   tuesday: 2,
   wednesday: 3,
-  thrusday: 4,
+  thursday: 4,
   friday: 5,
   saturday: 6,
 };
@@ -125,7 +125,7 @@ const IMAGES = {
     'https://i.imgur.com/0YfhQSb.png',
     'https://i.imgur.com/DkmZi95.jpg',
   ],
-  thrusday: [
+  thursday: [
     'https://i.imgur.com/pFnqk0S.jpg',
     'https://i.imgur.com/WM73Dog.jpg',
     'https://i.imgur.com/TSHZCr7.jpg',
@@ -273,9 +273,9 @@ function getRandomImageUrl(timestamp) {
     images.push(...IMAGES.wednesday);
     images.push(...IMAGES.any);
 
-  } else if (weekday === WEEKDAYS.thrusday) {
+  } else if (weekday === WEEKDAYS.thursday) {
 
-    images.push(...IMAGES.thrusday);
+    images.push(...IMAGES.thursday);
     images.push(...IMAGES.any);
     images.push(...IMAGES.notWednesday);
 
