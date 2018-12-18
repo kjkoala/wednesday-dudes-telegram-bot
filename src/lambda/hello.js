@@ -18,6 +18,7 @@ const IMAGES = {
     'https://i.imgur.com/GlXexz3.jpg',
     'https://i.imgur.com/IJ4Y0Ku.png',
     'https://i.imgur.com/jyncHsa.png',
+    'https://i.imgur.com/9WTtCJd.jpg',
     // Got from "tuesday"
     'https://i.imgur.com/Tioa26u.png',
   ],
@@ -27,6 +28,8 @@ const IMAGES = {
     'https://i.imgur.com/Tioa26u.png',
     'https://i.imgur.com/tRTTFnN.jpg',
     'https://i.imgur.com/fdAhtRy.jpg',
+    'https://i.imgur.com/fNaCgnq.jpg',
+    'https://i.imgur.com/k2RW9ZN.jpg',
     // Got from "monday"
     'https://i.imgur.com/GlXexz3.jpg',
     'https://i.imgur.com/IJ4Y0Ku.png',
@@ -124,6 +127,19 @@ const IMAGES = {
     'https://i.imgur.com/EGipqja.png',
     'https://i.imgur.com/0YfhQSb.png',
     'https://i.imgur.com/DkmZi95.jpg',
+    'https://i.imgur.com/oWxtBGA.jpg',
+    'https://i.imgur.com/7CYqfrL.jpg',
+    'https://i.imgur.com/gHHHT2T.jpg',
+    'https://i.imgur.com/BlbtyMA.jpg',
+    'https://i.imgur.com/W4WTe9O.jpg',
+    'https://i.imgur.com/uC71wJ8.jpg',
+    'https://i.imgur.com/FHeytBl.jpg',
+    'https://i.imgur.com/KiZt03Y.jpg',
+    'https://i.imgur.com/mgJoS4Z.png',
+    'https://i.imgur.com/B6YeZwP.png',
+    'https://i.imgur.com/Cwt1VjN.jpg',
+    'https://i.imgur.com/OsjolA0.jpg',
+    'https://i.imgur.com/Dyft9vx.jpg',
   ],
   thursday: [
     'https://i.imgur.com/pFnqk0S.jpg',
@@ -134,6 +150,8 @@ const IMAGES = {
     'https://i.imgur.com/QoAtJjA.png',
     'https://i.imgur.com/Flupiea.png',
     'https://i.imgur.com/ym1CNuN.png',
+    'https://i.imgur.com/SEGgQBl.jpg',
+    'https://i.imgur.com/Mffp0Ho.jpg',
   ],
   friday: [
     'https://i.imgur.com/OnfVaHt.png',
@@ -141,9 +159,11 @@ const IMAGES = {
   ],
   saturday: [
     'https://i.imgur.com/DCD0OB3.jpg',
+    'https://i.imgur.com/t9Q98AJ.jpg',
   ],
   sunday: [
     'https://i.imgur.com/IFIS02O.jpg',
+    'https://i.imgur.com/3iJaILL.jpg',
   ],
 
   notWednesday: [
@@ -160,11 +180,17 @@ const IMAGES = {
     'https://i.imgur.com/ejTdmVN.png',
     'https://i.imgur.com/ceYyuIi.png',
     'https://i.imgur.com/LOIQGqs.png',
+    'https://i.imgur.com/f0JCZkP.jpg',
+    'https://i.imgur.com/jdyS5LY.jpg',
+    'https://i.imgur.com/6kR9W9o.jpg',
   ],
 
   any: [
     'https://i.imgur.com/dcR8HrD.jpg',
     'https://i.imgur.com/krav1NI.jpg',
+    'https://i.imgur.com/8ycxJka.png',
+    'https://i.imgur.com/vgy26bm.jpg',
+    'https://i.imgur.com/MpJpaNI.jpg',
   ],
 };
 
