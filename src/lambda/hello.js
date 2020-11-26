@@ -107,7 +107,6 @@ const IMAGES = {
     'https://i.imgur.com/5OfMZ0Q.png',
     'https://i.imgur.com/PtY1Jsz.png',
     'https://i.imgur.com/O63mb6U.png',
-    'https://i.imgur.com/rLtHyGx.jpg',
     'https://i.imgur.com/H78ce90.png',
     'https://i.imgur.com/lSCeq6Z.png',
     'https://i.imgur.com/530lgdv.jpg',
@@ -183,6 +182,7 @@ const IMAGES = {
     'https://i.imgur.com/f0JCZkP.jpg',
     'https://i.imgur.com/jdyS5LY.jpg',
     'https://i.imgur.com/6kR9W9o.jpg',
+    'https://i.imgur.com/rLtHyGx.jpg',
   ],
 
   any: [
