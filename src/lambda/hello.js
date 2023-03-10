@@ -229,6 +229,7 @@ const IMAGES = {
 const METHOD_POST = 'POST';
 
 async function handler(event, context) {
+  console.log('ENV', process.env);
   console.log('Token', process.env.TELEGRAM_BOT_TOKEN);
 
   if (event.httpMethod !== METHOD_POST) {
