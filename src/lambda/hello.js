@@ -252,16 +252,15 @@ async function handler(event, context) {
     return;
   }
 
-  const chatId = data.message.chat.id;
+  // const chatId = data.message.chat.id;
   const token = process.env.TELEGRAM_BOT_TOKEN;
 
   const photoUrl = getRandomImageUrl(data.message.date);
 
-  console.log('[chatId]', chatId)
 
   let url = `https://api.telegram.org/bot${token}/sendGame`;
   // url += `?chat_id=${chatId}&photo=${encodeURIComponent(photoUrl)}`;
-  url += `?chat_id=${chatId}&game_short_name=${data.callback_query.game_short_name}&reply_markup={"url": "https:ya.ru/"}`;
+  url += `?chat_id=${data.callback_query.chat_instance}&game_short_name=${data.callback_query.game_short_name}&reply_markup={"url": "https:ya.ru/"}`;
 
   return 
 
