@@ -255,7 +255,7 @@ async function handler(event, context) {
   // const chatId = data.message.chat.id;
   const token = process.env.TELEGRAM_BOT_TOKEN;
 
-  const photoUrl = getRandomImageUrl(data.message.date);
+  // const photoUrl = getRandomImageUrl(data.message.date);
 
 
   let url = `https://api.telegram.org/bot${token}/sendGame`;
