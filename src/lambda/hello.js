@@ -260,7 +260,7 @@ async function handler(event, context) {
 
   let url = `https://api.telegram.org/bot${token}/sendGame`;
   // url += `?chat_id=${chatId}&photo=${encodeURIComponent(photoUrl)}`;
-  url += `?chat_id=${data.callback_query.chat_instance}&game_short_name=${data.callback_query.game_short_name}&reply_markup={"url": "https:ya.ru/"}`;
+  url += `?chat_id=${data.callback_query.from.id}&game_short_name=${data.callback_query.game_short_name}&reply_markup={"url": "https:ya.ru/"}`;
 
 //   try {
 //     const response = await fetch(url);
