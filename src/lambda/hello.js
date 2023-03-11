@@ -234,14 +234,14 @@ async function handler(event, context) {
     return { statusCode: 405, body: 'Method not allowed' };
   }
 
-  const body = event.body;
-
-  let data;
-
   try {
-    data = JSON.parse(body);
+    data = JSON.parse(event.body);
   } catch (err) {
     console.error('Failed to parse body as JSON', body);
+  }
+  
+  if (!data.text) {
+    return
   }
 
   if (!data) {
@@ -252,8 +252,6 @@ async function handler(event, context) {
     };
     return;
   }
-
-  console.log('Body', data);
 
   const chatId = data.message.chat.id;
   const token = process.env.TELEGRAM_BOT_TOKEN;
