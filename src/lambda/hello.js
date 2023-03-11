@@ -278,7 +278,7 @@ async function handler(event, context) {
 //     };
 
 //   }
-// }
+}
 
 https.get(url, (...rest) => {
   console.log('rest', ...rest)
