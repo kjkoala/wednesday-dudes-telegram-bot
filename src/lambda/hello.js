@@ -262,50 +262,52 @@ async function handler(event, context) {
   // url += `?chat_id=${chatId}&photo=${encodeURIComponent(photoUrl)}`;
   url += `?chat_id=${data.callback_query.chat_instance}&game_short_name=${data.callback_query.game_short_name}&reply_markup={"url": "https:ya.ru/"}`;
 
-  return 
+//   try {
+//     const response = await fetch(url);
 
-  try {
-    const response = await fetch(url);
+//     return {
+//       statusCode: 200,
+//       body: 'Success',
+//     };
+//   } catch (err) {
+//     console.error(err);
 
-    return {
-      statusCode: 200,
-      body: 'Success',
-    };
-  } catch (err) {
-    console.error(err);
+//     return {
+//       statusCode: 422,
+//       body: 'Something went wrong',
+//     };
 
-    return {
-      statusCode: 422,
-      body: 'Something went wrong',
-    };
+//   }
+// }
 
-  }
-}
+https.get(url, (...rest) => {
+  console.log('rest', ...rest)
+})
 
-function fetch(url) {
-  return new Promise((resolve, reject) => {
-    const req = https.get(url, (res) => {
-      let data = '';
+// function fetch(url) {
+//   return new Promise((resolve, reject) => {
+//     const req = https.get(url, (res) => {
+//       let data = '';
 
-      res.on('data', (chunk) => {
-        data += chunk;
-      });
+//       res.on('data', (chunk) => {
+//         data += chunk;
+//       });
 
-      res.on('end', () => {
-        console.log(res.statusCode);
-        console.log(data);
-        resolve();
-      });
-    });
+//       res.on('end', () => {
+//         console.log(res.statusCode);
+//         console.log(data);
+//         resolve();
+//       });
+//     });
 
-    req.on('error', (err) => {
-      console.error(err);
-      reject(err);
-    });
+//     req.on('error', (err) => {
+//       console.error(err);
+//       reject(err);
+//     });
 
-    req.end();
-  });
-}
+//     req.end();
+//   });
+// }
 
 
 function getRandomImageUrl(timestamp) {
