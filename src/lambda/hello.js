@@ -241,10 +241,6 @@ async function handler(event, context) {
   } catch (err) {
     console.error('Failed to parse body as JSON', body);
   }
-  console.log('[DATA 12]', data.message?.text);
-  if (data.message?.text !== '/dude') {
-    return
-  }
 
   if (!data) {
     console.error('Bad request', httpMethod);
