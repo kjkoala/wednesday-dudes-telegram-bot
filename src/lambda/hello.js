@@ -240,7 +240,7 @@ async function handler(event, context) {
     console.error('Failed to parse body as JSON', body);
   }
   
-  if (!data.text) {
+  if (data?.text !== '/dude') {
     return
   }
 
