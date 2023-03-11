@@ -238,6 +238,7 @@ async function handler(event, context) {
 
   try {
     data = JSON.parse(event.body);
+    console.log('[DATTA]', data)
   } catch (err) {
     console.error('Failed to parse body as JSON', body);
   }
