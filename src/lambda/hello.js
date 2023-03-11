@@ -233,13 +233,15 @@ async function handler(event, context) {
   if (event.httpMethod !== METHOD_POST) {
     return { statusCode: 405, body: 'Method not allowed' };
   }
+  
+  let data;
 
   try {
     data = JSON.parse(event.body);
   } catch (err) {
     console.error('Failed to parse body as JSON', body);
   }
-  
+  console.log('[DATA]', data);
   if (data?.text !== '/dude') {
     return
   }
