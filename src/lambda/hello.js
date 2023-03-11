@@ -257,8 +257,11 @@ async function handler(event, context) {
 
   const photoUrl = getRandomImageUrl(data.message.date);
 
-  let url = `https://api.telegram.org/bot${token}/sendPhoto`;
-  url += `?chat_id=${chatId}&photo=${encodeURIComponent(photoUrl)}`;
+  let url = `https://api.telegram.org/bot${token}/sendGame`;
+  // url += `?chat_id=${chatId}&photo=${encodeURIComponent(photoUrl)}`;
+  url += `?chat_id=${chatId}&game_short_name=${data.game_short_name}&reply_markup={"url": "https:ya.ru/"}`;
+
+  return 
 
   try {
     const response = await fetch(url);
