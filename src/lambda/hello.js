@@ -238,7 +238,7 @@ async function handler(event, context) {
 
   try {
     data = JSON.parse(event.body);
-    console.log('[SHORT_NAME]', data.game_short_name)
+    console.log('[SHORT_NAME 2]', data.message.game_short_name)
   } catch (err) {
     console.error('Failed to parse body as JSON', body);
   }
