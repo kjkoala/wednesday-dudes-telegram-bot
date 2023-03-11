@@ -238,11 +238,11 @@ async function handler(event, context) {
 
   try {
     data = JSON.parse(event.body);
-    console.log('[MESSAGE]', data.message);
-    console.log('[EVENT]', event);
   } catch (err) {
     console.error('Failed to parse body as JSON', body);
   }
+
+  console.log('[callback_query]', data.callback_query.game_short_name)
 
   if (!data) {
     console.error('Bad request', httpMethod);
