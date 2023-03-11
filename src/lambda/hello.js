@@ -242,8 +242,6 @@ async function handler(event, context) {
     console.error('Failed to parse body as JSON', body);
   }
 
-  console.log('[callback_query]', data.callback_query.game_short_name)
-
   if (!data) {
     console.error('Bad request', httpMethod);
     return {
@@ -258,9 +256,11 @@ async function handler(event, context) {
 
   const photoUrl = getRandomImageUrl(data.message.date);
 
+  console.log('[chatId]', chatId)
+
   let url = `https://api.telegram.org/bot${token}/sendGame`;
   // url += `?chat_id=${chatId}&photo=${encodeURIComponent(photoUrl)}`;
-  url += `?chat_id=${chatId}&game_short_name=${data.game_short_name}&reply_markup={"url": "https:ya.ru/"}`;
+  url += `?chat_id=${chatId}&game_short_name=${data.callback_query.game_short_name}&reply_markup={"url": "https:ya.ru/"}`;
 
   return 
 
