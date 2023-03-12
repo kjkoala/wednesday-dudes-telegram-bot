@@ -31,7 +31,9 @@ async function handler(event, context) {
   let url = `https://api.telegram.org/bot${token}/answerCallbackQuery`;
   url += `?callback_query_id=${data.callback_query.id}&url=https://kjkoala.github.io/FlappyBird`;
 
-  https.get(url)
+  https.get(url, (...res) => {
+    console.log(res)
+  })
 }
 
 exports.handler = handler;
